@@ -1,8 +1,9 @@
 package com.filmes;
 
 import javax.management.RuntimeErrorException;
+import dados.filmes.Filmes;
 
-public class RepArrayFilmes implements InterfaceArray{
+public class RepArrayFilmes implements RepFilme{
     private Filmes filme;
     private int posicao;
     private int n;

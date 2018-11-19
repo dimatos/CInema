@@ -1,10 +1,10 @@
 
 
 import javax.management.RuntimeErrorException;
+import dados.filmes.Filmes;
 
 
-
-class RepListaFilmes implements InterfaceLista {
+class RepListaFilmes implements RepFilme{
     private Filmes filme;
     private RepFilmesLista proximo;
 
@@ -23,9 +23,9 @@ class RepListaFilmes implements InterfaceLista {
         }
     }
 
-    public void remover(Filmes filmeRemover){
+    public void remover(String nome){
         if(this.filme != null){
-        if(this.filme.getNome().equals(filmeRemover.getNome())) {
+        if(this.filme.getNome().equals(nome)) {
             this.filme=this.proximo.filme;
             this.proximo=this.proximo.proximo;
         } else{

@@ -1,4 +1,4 @@
-class Filmes {
+public class Filmes {
     private String nome;
     private String genero;
     private int faixa_etaria;
