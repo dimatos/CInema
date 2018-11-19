@@ -1,5 +1,7 @@
 //package com.interfaces;
 
+import javax.management.RuntimeErrorException;
+
 class ArrayFilmes implements InterfaceArray{
     private Filmes filme;
     private int posicao;
@@ -29,18 +31,35 @@ class ArrayFilmes implements InterfaceArray{
         }
     }
 
-    public void remover(){
+    public void remover(String nome){
+        int i=0;
+        while(!arrayFilmes[i].getNome().equals(nome)){
+            i++;
+        }
+        while(i<n && arrayFilmes[i]!=null){
+            arrayFilmes[i]=arrayFilmes[i+1];
+        }
 
     }
 
-    public boolean buscar(){
-
+    public Filmes buscar(String nome){
+        int i=0;
+        Boolean controle=false;
+        for(; i<n && arrayfilmes[i]!=null && !controle; i++){
+            if(arrayFilmes[i].getNome().equals(nome)) 
+                controle=true;
+        }
+        if(controle){
+            return arrayFilmes[i]; // se houve igualdade, então retorna o objeto
+        }else{
+            return null;
+        }
     }
 
     public void duplicarArray(){
         Filmes[] arrayAux = new Filmes[n];
         for(int i=0; i<n; i++){
-            arrayAux[i]=arrayFilmes[i];
+            arrayAux[i]=this.arrayFilmes[i];
         }
         arrayFilmes = new ArrayFilmes(arrayAux, n*2);
     }
