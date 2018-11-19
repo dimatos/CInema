@@ -1,5 +1,5 @@
-public interface Array{
-    void inserir();
+public interface InterfaceArray{
+    void inserir(Filmes newFilme);
     void remover();
     boolean buscar();
 }
