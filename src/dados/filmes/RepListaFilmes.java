@@ -1,10 +1,10 @@
-package com.interfaces;
+
 
 import javax.management.RuntimeErrorException;
 
 
 
-class RepFilmesLista implements InterfaceLista {
+class RepListaFilmes implements InterfaceLista {
     private Filmes filme;
     private RepFilmesLista proximo;
 
